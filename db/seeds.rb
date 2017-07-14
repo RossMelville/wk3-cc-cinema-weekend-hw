@@ -14,5 +14,8 @@ film1.save
 ticket1 = Ticket.new({ 'customer_id' => customer1.id, 'film_id' => film1.id })
 ticket1.save
 
+film1.price = 8
+film1.update()
+
 
 binding.pry

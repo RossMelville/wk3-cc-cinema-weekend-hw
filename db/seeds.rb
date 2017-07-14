@@ -4,6 +4,9 @@ require_relative ("../models/ticket.rb")
 
 require ("pry")
 
+Ticket.delete
+Film.delete
+Customer.delete
 
 customer1 = Customer.new({ 'name' => 'Ross', 'funds' => 30 })
 customer1.save

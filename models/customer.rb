@@ -33,4 +33,10 @@ class Customer
     return customers.map { |customer| Customer.new(customer) }
   end
 
+  def self.delete
+    sql = "DELETE FROM customers;"
+    SqlRunner.run(sql)
+  end
+
+
 end

@@ -17,5 +17,8 @@ ticket1.save
 film1.price = 8
 film1.update()
 
+customer1.funds = 22
+customer1.update()
+
 
 binding.pry

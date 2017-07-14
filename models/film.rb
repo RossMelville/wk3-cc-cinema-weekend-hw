@@ -14,9 +14,8 @@ class Film
 
   def save()
     sql = "INSERT INTO films (title, price) 
-    VALUES ('#{@title}', #{@price}) 
-    RETURNING id;"
-
+      VALUES ('#{@title}', #{@price}) 
+      RETURNING id;"
     film = SqlRunner.run(sql).first
     @id = film['id'].to_i
   end
@@ -24,9 +23,8 @@ class Film
   def update()
     sql = "UPDATE films SET (title, price)
       = ('#{title}', #{price})
-      WHERE id = #{id};"
-
-    film = SqlRunner.run(sql)
+      WHERE id = #{@id};"
+    SqlRunner.run(sql)
   end
 
 

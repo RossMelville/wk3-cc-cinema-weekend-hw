@@ -23,8 +23,6 @@ film1.update()
 customer1.funds = 22
 customer1.update()
 
-film1.delete
-customer1.delete
 
 
 binding.pry

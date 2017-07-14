@@ -21,6 +21,18 @@ class Ticket
     @id = ticket['id'].to_i
   end
 
+  def customer()
+    sql = "SELECT * FROM customers WHERE id = #{@customer_id};"
+    customers = SqlRunner.run(sql)
+    return customers.map { |customer| Customer.new(customer)}
+  end
+
+  def film()
+    sql = "SELECT * FROM films WHERE id = #{@film_id};"
+    films = SqlRunner.run(sql)
+    return films.map{ |film| Film.new(film)}
+  end
+
   def self.all
     sql = "SELECT * FROM tickets;"
     tickets = SqlRunner.run(sql)

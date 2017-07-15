@@ -40,6 +40,12 @@ class Customer
     return films.map { |film| Film.new(film)}
   end
 
+  def tickets
+    sql = "SELECT tickets.* FROM tickets
+      WHERE tickets.customer_id = #{@id}"
+    tickets = SqlRunner.run(sql)
+    return tickets.count
+  end
 
   def self.all
     sql = "SELECT * FROM customers;"

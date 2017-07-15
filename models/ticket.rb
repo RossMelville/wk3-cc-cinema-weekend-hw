@@ -1,6 +1,7 @@
 require_relative ("../db/sql_runner.rb")
 require_relative ("./film.rb")
 require_relative ("./customer.rb")
+require ('pry')
 
 class Ticket
 
@@ -17,8 +18,22 @@ class Ticket
     VALUES (#{@customer_id}, #{@film_id})
     RETURNING id;"
 
+# response.find {|x| x['label'] == 'cat' }
+    
     ticket = SqlRunner.run(sql).first
     @id = ticket['id'].to_i
+
+    films = Film.all
+    films.find { |film| @id = film_id}
+    
+    customers = Customer.all
+    customers.find { |customer| @id = customer_id}
+
+    for cust in customer do
+      cust.funds = (cust.funds - film[0].price)
+      cust.update
+    end
+    
   end
 
   def customer()

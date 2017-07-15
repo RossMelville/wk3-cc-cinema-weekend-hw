@@ -40,6 +40,7 @@ class Customer
     return films.map { |film| Film.new(film)}
   end
 
+
   def self.all
     sql = "SELECT * FROM customers;"
     customers = SqlRunner.run(sql)

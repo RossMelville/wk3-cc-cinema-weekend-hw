@@ -9,10 +9,10 @@ Film.delete
 Customer.delete
 
 customer1 = Customer.new({ 'name' => 'Ross', 'funds' => 50 })
-customer2 = Customer.new({ 'name' => 'Drew', 'funds' => 30 })
-customer3 = Customer.new({ 'name' => 'Niall', 'funds' => 20 })
-customer4 = Customer.new({ 'name' => 'Steve', 'funds' => 40 })
-customer5 = Customer.new({ 'name' => 'Chris', 'funds' => 60 })
+customer2 = Customer.new({ 'name' => 'Drew', 'funds' => 50 })
+customer3 = Customer.new({ 'name' => 'Niall', 'funds' => 50 })
+customer4 = Customer.new({ 'name' => 'Steve', 'funds' => 50 })
+customer5 = Customer.new({ 'name' => 'Chris', 'funds' => 50 })
 
 customer1.save
 customer2.save
@@ -20,11 +20,11 @@ customer3.save
 customer4.save
 customer5.save
 
-film1 = Film.new({ 'title' => 'War for the Planet of the Apes', 'price' => 7 })
-film2 = Film.new({ 'title' => 'Spiderman: Homecoming', 'price' => 7})
-film3 = Film.new({ 'title' => 'Despicable Me 3', 'price' => 7})
-film4 = Film.new({ 'title' => 'Cars 3', 'price' => 7})
-film5 = Film.new({ 'title' => 'Baby Driver', 'price' => 7})
+film1 = Film.new({ 'title' => 'War for the Planet of the Apes', 'price' => 1 })
+film2 = Film.new({ 'title' => 'Spiderman: Homecoming', 'price' => 2})
+film3 = Film.new({ 'title' => 'Despicable Me 3', 'price' => 3})
+film4 = Film.new({ 'title' => 'Cars 3', 'price' => 4})
+film5 = Film.new({ 'title' => 'Baby Driver', 'price' => 5})
 
 film1.save
 film2.save
@@ -42,6 +42,8 @@ ticket7 = Ticket.new({ 'customer_id' => customer5.id, 'film_id' => film4.id })
 ticket8 = Ticket.new({ 'customer_id' => customer3.id, 'film_id' => film3.id })
 ticket9 = Ticket.new({ 'customer_id' => customer4.id, 'film_id' => film4.id })
 ticket10 = Ticket.new({ 'customer_id' => customer5.id, 'film_id' => film5.id })
+ticket11 = Ticket.new({ 'customer_id' => customer1.id, 'film_id' => film2.id })
+ticket12 = Ticket.new({ 'customer_id' => customer3.id, 'film_id' => film5.id })
 
 ticket1.save
 ticket2.save
@@ -53,6 +55,8 @@ ticket7.save
 ticket8.save
 ticket9.save
 ticket10.save
+ticket11.save
+ticket12.save
 
 
 
